@@ -10,22 +10,34 @@
                 "algorithm": "SHA-256",
                 "alias": "a",
                 "complex": [{
-                    "map": ["iso3166alpha2", "whiteSpaceIsSpace", "trim", "toLowerCase"]
+                    "country": {
+                        "map": ["iso3166alpha2", "whiteSpaceIsSpace", "trim", "toLowerCase"]
+                    }
                 }, {
-                    "map": ["collapseWhiteSpace", "whiteSpaceIsSpace", "trim", "toLowerCase"]
+                    "postalCode": {
+                        "map": ["collapseWhiteSpace", "whiteSpaceIsSpace", "trim", "toLowerCase"]
+                    }
                 }, {
-                    "map": ["whiteSpaceIsSpace", "trim", "toLowerCase"]
+                    "street": {
+                        "map": ["whiteSpaceIsSpace", "trim", "toLowerCase"]
+                    }
                 }, {
-                    "map": ["whiteSpaceIsSpace", "trim", "toLowerCase"]
+                    "number": {
+                        "map": ["whiteSpaceIsSpace", "trim", "toLowerCase"]
+                    }
                 }]
             },
             "countryAndPostalCode": {
                 "algorithm": "SHA-256",
                 "alias": "c",
                 "complex": [{
-                    "map": ["iso3166alpha2", "whiteSpaceIsSpace", "trim", "toLowerCase"]
+                    "country": {
+                        "map": ["iso3166alpha2", "whiteSpaceIsSpace", "trim", "toLowerCase"]
+                    }
                 }, {
-                    "map": ["collapseWhiteSpace", "whiteSpaceIsSpace", "trim", "toLowerCase"]
+                    "postalCode": {
+                        "map": ["collapseWhiteSpace", "whiteSpaceIsSpace", "trim", "toLowerCase"]
+                    }
                 }]
             },
             "phoneNumber": {

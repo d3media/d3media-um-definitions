@@ -46,12 +46,12 @@ exports.hashes = {
     address: {
         algorithm: ALGORITHM,
         alias: 'a',
-        complex: [country, postalCode, street, streetNumber]
+        complex: [{country: country}, {postalCode: postalCode}, {street: street}, {number:streetNumber}]
     },
     countryAndPostalCode: {
         algorithm: ALGORITHM,
         alias: 'c',
-        complex: [country, postalCode]
+        complex: [{country:country}, {postalCode:postalCode}]
     },
     phoneNumber: {
         algorithm: ALGORITHM,
