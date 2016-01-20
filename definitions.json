@@ -1,0 +1,38 @@
+{
+    "v1": {
+        "hashes": {
+            "email": {
+                "algorithm": "SHA-256",
+                "map": ["whiteSpaceIsSpace", "trim", "toLowerCase"],
+                "alias": "e"
+            },
+            "address": {
+                "algorithm": "SHA-256",
+                "alias": "a",
+                "complex": [{
+                    "map": ["iso3166alpha2", "whiteSpaceIsSpace", "trim", "toLowerCase"]
+                }, {
+                    "map": ["collapseWhiteSpace", "whiteSpaceIsSpace", "trim", "toLowerCase"]
+                }, {
+                    "map": ["whiteSpaceIsSpace", "trim", "toLowerCase"]
+                }, {
+                    "map": ["whiteSpaceIsSpace", "trim", "toLowerCase"]
+                }]
+            },
+            "countryAndPostalCode": {
+                "algorithm": "SHA-256",
+                "alias": "c",
+                "complex": [{
+                    "map": ["iso3166alpha2", "whiteSpaceIsSpace", "trim", "toLowerCase"]
+                }, {
+                    "map": ["collapseWhiteSpace", "whiteSpaceIsSpace", "trim", "toLowerCase"]
+                }]
+            },
+            "phoneNumber": {
+                "algorithm": "SHA-256",
+                "alias": "p",
+                "map": ["stripNonNumbers", "whiteSpaceIsSpace", "trim", "toLowerCase"]
+            }
+        }
+    }
+}

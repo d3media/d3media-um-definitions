@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+
+'use strict';
+var definitions = JSON.stringify(require('../definitions/'));
+var beautify = require('js-beautify').js_beautify;
+console.log(beautify(definitions));
