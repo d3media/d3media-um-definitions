@@ -45,6 +45,7 @@
                 "alias": "p",
                 "map": ["stripNonNumbers", "whiteSpaceIsSpace", "trim", "toLowerCase"]
             }
-        }
+        },
+        "separator": "|"
     }
 }

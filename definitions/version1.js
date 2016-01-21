@@ -59,3 +59,4 @@ exports.hashes = {
         map: ['stripNonNumbers'].concat(TRIM_AND_LOWERCASE)
     }
 };
+exports.separator = '|';
