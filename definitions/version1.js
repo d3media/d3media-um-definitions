@@ -41,21 +41,21 @@ exports.hashes = {
     email: {
         algorithm: ALGORITHM,
         map: TRIM_AND_LOWERCASE,
-        alias: 'e'
+        querystring: 'e'
     },
     address: {
         algorithm: ALGORITHM,
-        alias: 'a',
+        querystring: 'a',
         complex: [{country: country}, {postalCode: postalCode}, {street: street}, {number:streetNumber}]
     },
     countryAndPostalCode: {
         algorithm: ALGORITHM,
-        alias: 'c',
+        querystring: 'c',
         complex: [{country:country}, {postalCode:postalCode}]
     },
     phoneNumber: {
         algorithm: ALGORITHM,
-        alias: 'p',
+        querystring: 'p',
         map: ['stripNonNumbers'].concat(TRIM_AND_LOWERCASE)
     }
 };

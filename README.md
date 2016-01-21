@@ -28,8 +28,8 @@ As you can see at [definitions.json](https://github.com/d3media/d3media-um-defin
 		// "map" is a list of function to apply to the raw email.
 		// the output of the previous will be input of the next one.
                 "map": ["whiteSpaceIsSpace", "trim", "toLowerCase"],
-		// Alias
-                "alias": "e"
+		// querystring
+                "querystring": "e"
             },
         }
     }
@@ -74,4 +74,19 @@ var field2ReadyToHash = toLowerCase(trim(field2));
 var someComplexHash = sha256(field1+"|"+field2);
 ```
 
-
+### The querystring field
+Every hash definition defines a `querystring` value. When you submit this hashes via an http `GET`, the `querystring` value is the *key* you will use to reference this hash.
+```
+{
+    "v1": {
+        "hashes": {
+	    // Hash type email
+            "email": {
+	         ...
+                "querystring": "e"
+            },
+        }
+    }
+}
+// GET $HOST/e=$email-hash
+```
