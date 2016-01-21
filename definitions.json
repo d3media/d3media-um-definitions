@@ -2,42 +2,52 @@
     "v1": {
         "hashes": {
             "email": {
+                "name": "email",
                 "map": ["whiteSpaceIsSpace", "trim", "toLowerCase"],
                 "querystring": "e"
             },
             "address": {
+                "name": "address",
                 "querystring": "a",
                 "complex": [{
                     "country": {
+                        "name": "country",
                         "map": ["iso3166alpha2", "whiteSpaceIsSpace", "trim", "toLowerCase"]
                     }
                 }, {
                     "postalCode": {
+                        "name": "postalCode",
                         "map": ["collapseWhiteSpace", "whiteSpaceIsSpace", "trim", "toLowerCase"]
                     }
                 }, {
                     "street": {
+                        "name": "street",
                         "map": ["whiteSpaceIsSpace", "trim", "toLowerCase"]
                     }
                 }, {
                     "number": {
+                        "name": "number",
                         "map": ["whiteSpaceIsSpace", "trim", "toLowerCase"]
                     }
                 }]
             },
             "countryAndPostalCode": {
+                "name": "countryAndPostalCode",
                 "querystring": "c",
                 "complex": [{
                     "country": {
+                        "name": "country",
                         "map": ["iso3166alpha2", "whiteSpaceIsSpace", "trim", "toLowerCase"]
                     }
                 }, {
                     "postalCode": {
+                        "name": "postalCode",
                         "map": ["collapseWhiteSpace", "whiteSpaceIsSpace", "trim", "toLowerCase"]
                     }
                 }]
             },
             "phoneNumber": {
+                "name": "phoneNumber",
                 "querystring": "p",
                 "map": ["stripNonNumbers", "whiteSpaceIsSpace", "trim", "toLowerCase"]
             }

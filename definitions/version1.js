@@ -2,15 +2,19 @@
 var ALGORITHM = 'SHA-256';
 var TRIM_AND_LOWERCASE = ['whiteSpaceIsSpace', 'trim', 'toLowerCase'];
 var country = {
+    name: 'country',
     map: ['iso3166alpha2'].concat(TRIM_AND_LOWERCASE)
 };
 var postalCode = {
+    name: 'postalCode',
     map: ['collapseWhiteSpace'].concat(TRIM_AND_LOWERCASE)
 };
 var street = {
+    name: 'street',
     map: TRIM_AND_LOWERCASE
 };
 var streetNumber = {
+    name: 'number',
     map: TRIM_AND_LOWERCASE
 };
 var HASH_FORMAT = 'hex';
@@ -40,10 +44,12 @@ var HASH_FORMAT = 'hex';
 
 exports.hashes = {
     email: {
+        name: 'email',
         map: TRIM_AND_LOWERCASE,
         querystring: 'e'
     },
     address: {
+        name: 'address',
         querystring: 'a',
         complex: [{
             country: country
@@ -56,6 +62,7 @@ exports.hashes = {
         }]
     },
     countryAndPostalCode: {
+        name: 'countryAndPostalCode',
         querystring: 'c',
         complex: [{
             country: country
@@ -64,6 +71,7 @@ exports.hashes = {
         }]
     },
     phoneNumber: {
+        name: 'phoneNumber',
         querystring: 'p',
         map: ['stripNonNumbers'].concat(TRIM_AND_LOWERCASE)
     }
