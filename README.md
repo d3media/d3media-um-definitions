@@ -23,8 +23,6 @@ As you can see at [definitions.json](https://github.com/d3media/d3media-um-defin
         "hashes": {
 	    // Hash type email
             "email": {
-	        // Hash algorithym
-                "algorithm": "SHA-256",
 		// "map" is a list of function to apply to the raw email.
 		// the output of the previous will be input of the next one.
                 "map": ["whiteSpaceIsSpace", "trim", "toLowerCase"],
@@ -35,6 +33,7 @@ As you can see at [definitions.json](https://github.com/d3media/d3media-um-defin
     }
 }
 ```
+Also, it defines the hash algorithm and format.
 ### The map field
 The map field defines how to process the raw information to create the hash. In this case, an email address. Given the following functions in our program `whiteSpaceIsSpace`, `trim`, `toLowerCase`we can process an email in the following way:
 ```
@@ -90,3 +89,6 @@ Every hash definition defines a `querystring` value. When you submit this hashes
 }
 // GET $HOST/e=$email-hash
 ```
+
+### Hashing
+Hash must be computed with the *algorithm* and *format* specified  at [definitions.json](https://github.com/d3media/d3media-um-definitions/blob/master/definitions.json)

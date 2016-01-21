@@ -2,13 +2,11 @@
     "v1": {
         "hashes": {
             "email": {
-                "algorithm": "SHA-256",
                 "map": ["whiteSpaceIsSpace", "trim", "toLowerCase"],
-                "alias": "e"
+                "querystring": "e"
             },
             "address": {
-                "algorithm": "SHA-256",
-                "alias": "a",
+                "querystring": "a",
                 "complex": [{
                     "country": {
                         "map": ["iso3166alpha2", "whiteSpaceIsSpace", "trim", "toLowerCase"]
@@ -28,8 +26,7 @@
                 }]
             },
             "countryAndPostalCode": {
-                "algorithm": "SHA-256",
-                "alias": "c",
+                "querystring": "c",
                 "complex": [{
                     "country": {
                         "map": ["iso3166alpha2", "whiteSpaceIsSpace", "trim", "toLowerCase"]
@@ -41,11 +38,12 @@
                 }]
             },
             "phoneNumber": {
-                "algorithm": "SHA-256",
-                "alias": "p",
+                "querystring": "p",
                 "map": ["stripNonNumbers", "whiteSpaceIsSpace", "trim", "toLowerCase"]
             }
         },
-        "separator": "|"
+        "separator": "|",
+        "algorithm": "SHA-256",
+        "format": "hex"
     }
 }

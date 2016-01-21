@@ -13,6 +13,7 @@ var street = {
 var streetNumber = {
     map: TRIM_AND_LOWERCASE
 };
+var HASH_FORMAT = 'hex';
 // map definitions:
 // trim: remove all white space before and after content
 // I.e trim('   abc   ') returns 'abc'
@@ -39,24 +40,34 @@ var streetNumber = {
 
 exports.hashes = {
     email: {
-        algorithm: ALGORITHM,
         map: TRIM_AND_LOWERCASE,
         querystring: 'e'
     },
     address: {
-        algorithm: ALGORITHM,
         querystring: 'a',
-        complex: [{country: country}, {postalCode: postalCode}, {street: street}, {number:streetNumber}]
+        complex: [{
+            country: country
+        }, {
+            postalCode: postalCode
+        }, {
+            street: street
+        }, {
+            number: streetNumber
+        }]
     },
     countryAndPostalCode: {
-        algorithm: ALGORITHM,
         querystring: 'c',
-        complex: [{country:country}, {postalCode:postalCode}]
+        complex: [{
+            country: country
+        }, {
+            postalCode: postalCode
+        }]
     },
     phoneNumber: {
-        algorithm: ALGORITHM,
         querystring: 'p',
         map: ['stripNonNumbers'].concat(TRIM_AND_LOWERCASE)
     }
 };
 exports.separator = '|';
+exports.algorithm = ALGORITHM;
+exports.format = HASH_FORMAT;
