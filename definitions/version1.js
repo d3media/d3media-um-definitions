@@ -17,7 +17,11 @@ var streetNumber = {
     name: 'number',
     map: TRIM_AND_LOWERCASE
 };
-var HASH_FORMAT = 'hex';
+
+var HASH_FORMAT = 'base64'; 
+// See https://tools.ietf.org/html/rfc4648#page-7 
+// We expect that you escape the base64 strings when used in URL
+
 // map definitions:
 // trim: remove all white space before and after content
 // I.e trim('   abc   ') returns 'abc'
