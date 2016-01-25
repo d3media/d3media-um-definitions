@@ -49,7 +49,7 @@ var HASH_FORMAT = 'base64';
 exports.hashes = {
     email: {
         name: 'email',
-        map: TRIM_AND_LOWERCASE,
+        map: ['trim', 'toLowerCase'],
         querystring: 'e'
     },
     address: {
