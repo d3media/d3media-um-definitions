@@ -1,6 +1,30 @@
 #!/usr/bin/env node
 
 'use strict';
-var definitions = JSON.stringify(require('../definitions/'));
+
+function deepCopy(obj) {
+    return JSON.parse(JSON.stringify(obj));
+}
+
+var version = /^v\d+$/;
+var definitions = require('../definitions/');
+var querstring = deepCopy(definitions.querystring);
+var definitionsAsText = JSON.stringify(require('../definitions/'));
 var beautify = require('js-beautify').js_beautify;
-console.log(beautify(definitions));
+console.log(beautify(definitionsAsText));
+
+// Check we do not overlap definitions
+Object.keys(definitions).filter(function (x) {
+    return version.test(x);
+}).forEach(function (x) {
+    var cp = deepCopy(querstring);
+    JSON.parse(JSON.stringify(definitions[x]), function (key, value) {
+        if (key === 'querystring') {
+            if (cp[value]) {
+                throw new Error('Duplicated querystring' + value);
+            }
+            cp[value] = 'querystring';
+        }
+        return value;
+    });
+});
