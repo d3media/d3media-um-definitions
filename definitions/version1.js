@@ -18,7 +18,7 @@ var streetNumber = {
     map: TRIM_AND_LOWERCASE
 };
 
-var HASH_FORMAT = 'base64';
+var HASH_FORMAT = 'base64url';
 // See https://tools.ietf.org/html/rfc4648#page-7 
 // We expect that you escape the base64 strings when used in URL
 
