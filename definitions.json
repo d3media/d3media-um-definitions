@@ -3,7 +3,7 @@
         "hashes": {
             "email": {
                 "name": "email",
-                "map": ["whiteSpaceIsSpace", "trim", "toLowerCase"],
+                "map": ["trim", "toLowerCase"],
                 "querystring": "e"
             },
             "address": {
@@ -54,6 +54,10 @@
         },
         "separator": "|",
         "algorithm": "SHA-256",
-        "format": "hex"
+        "format": "base64url"
+    },
+    "querystring": {
+        "sig": "hmac signature",
+        "cli": "your client ID"
     }
 }
