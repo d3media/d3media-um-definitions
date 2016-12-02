@@ -1,8 +1,9 @@
-# d3media UM definitions
+# d3media UserMatching (UM) Definitions
 
 ## What is this repository
-This repository contains all the information you need to create UM valid hashes.
-You probable get to here because you already know this service. Otherwise, please visit [d3media.de](http://www.d3media.de/)
+Since most hash functions will produce a hash of `Matt@d3media.de` that is different than a hash of `matt@d3media.de` it is important to properly clean and normalize input data through a standardized process prior to hashing.  This guarantees that two independent parties with the same source data can consistently produce the same hash for the same user.
+
+This repository provides the current "spec" for normalization and hashing of different types of data for use with the d3media User Onboarding/Matching system.
 
 ## How does it work?
 We expose a [definitions.json](https://github.com/d3media/d3media-um-definitions/blob/master/definitions.json) file which defines each hash type *recipe*
